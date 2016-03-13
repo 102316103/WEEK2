@@ -1,0 +1,24 @@
+import java.io.*;
+public class B3 {
+
+	public static void main(String[] args) {
+		// TODO 自動產生的方法 Stub
+		System.out.print("輸入年分:");
+		InputStreamReader is = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(is);
+		try {
+			int year = in.read();
+			if ( (year%4)==0 && (year%100)!=0 || (year%400) ==0) {
+				System.out.println("閏年");
+			}
+			else {
+				System.out.println("平年");				
+			}
+		}
+		catch (Exception e){
+			System.out.println("ERROR:"+e);
+		}
+		
+	}
+
+}
