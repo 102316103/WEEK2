@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class B4 {
+
+	public static void main(String[] args) {
+		// TODO 自動產生的方法 Stub
+		String name[] = new String[10];
+		int grade[] = new int[10];
+		Scanner op;
+		int opt,i;
+		
+		do{
+			System.out.print("(1)輸入(2)印出:");
+			op = new Scanner(System.in);
+			opt = op.nextInt();
+			
+			if(opt==1){
+				for(i=0;i<3;i++)
+				{
+					System.out.print("輸入"+i+"學生姓名:");					
+					name[i] = op.next();					
+					try{
+						System.out.print("成績:");
+						String s = op.next();
+						grade[i] = Integer.parseInt(s);  					
+					}catch ( NumberFormatException e){
+						System.out.println("Error:"+e);
+						i--;
+					}
+				}
+			}
+			else if(opt==2){
+				System.out.print("編碼:");
+				op = new Scanner(System.in);
+				int num = op.nextInt();
+				System.out.println(name[num]+":"+grade[num]);
+			}
+		}while(opt != -1);
+	}
+
+}
