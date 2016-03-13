@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+
+public class B2 {
+
+	public static void main(String[] args) {
+		int opt=0;
+		do{
+			System.out.print("輸入A:");
+			Scanner op = new Scanner(System.in);
+			float a = op.nextFloat();
+			System.out.print("輸入B:");
+			float b = op.nextFloat();
+		
+			System.out.print("(1)+(2)-(3)*(4)/ :");
+			opt = op.nextInt();
+			switch(opt) {
+				case 1:
+					System.out.println("->"+(a+b)); 
+	                break; 
+				case 2:
+					System.out.println("->"+(a-b)); 
+	                break; 
+				case 3:
+					System.out.println("->"+(a*b)); 
+	                break; 
+				case 4:
+					if(a==0)
+						System.out.println("error!!");
+					else
+						System.out.println("->"+(a/b)); 
+	                break; 
+			}			
+		}while(opt != -1);
+
+	}
+
+}
