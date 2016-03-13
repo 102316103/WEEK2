@@ -1,0 +1,102 @@
+import java.util.Scanner;
+public class D2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int opt=0,count=0;
+		double a,b;
+		Shape shapelist[] = new Shape[10];
+		Scanner s = new Scanner(System.in);
+		do{
+			System.out.print("(1)圓形(2)橢圓形(3)矩形(4)三角形(-1)end:");
+			opt = s.nextInt();
+			if(opt==1){
+				System.out.print("輸入圓形半徑: ");
+                a = s.nextDouble();
+                shapelist[count] = new Circle(a);
+                count++;
+			}else if(opt==2){
+				System.out.print("輸入橢圓形長軸: ");
+                a = s.nextDouble();
+                System.out.print("輸入橢圓形短軸: ");
+                b = s.nextDouble();
+                shapelist[count] = new Oval(a,b);
+                count++;
+			}else if(opt==3){//Rectangle
+				System.out.print("輸入矩形寬: ");
+                a = s.nextDouble();
+                System.out.print("輸入矩形高: ");
+                b = s.nextDouble();
+                shapelist[count] = new Rectangle(a,b);
+                count++;
+			}else if(opt==4){
+				System.out.print("輸入三角形底: ");
+                a = s.nextDouble();
+                System.out.print("輸入三角形高: ");
+                b = s.nextDouble();
+                shapelist[count] = new Trg(a,b);
+                count++;				
+			}				
+		}while(opt!=-1);
+		for (int i=0;i<count;i++)
+			 System.out.println((i+1)+":"+shapelist[i].put());
+	}
+
+}
+abstract class Shape {
+	 abstract double area();
+	 abstract String put();
+}
+class Circle extends Shape {
+	 double r;
+	 public Circle(double r) {
+		 this.r = r;
+	 }
+	 public double area() {
+		 return 3.14 * r * r;
+	 }
+	 String put(){
+		 return "圓形:"+area();
+	 }
+}
+class Rectangle extends Shape {
+	 double width, height;
+	 public Rectangle(double w, double h) {
+		 this.width = w;
+		 this.height = h;
+	 }
+	 public double area() {
+		 return width*height;
+	 }
+	 String put(){
+		 return "矩形:"+area();
+	 }
+}
+class Oval extends Shape {
+	double minr,maxr;
+	public Oval(double i, double a) {
+		 this.minr = i;
+		 this.maxr = a;
+	}
+	public double area() {
+		 return maxr*minr*3.14;
+	}
+	String put(){
+		 return "橢圓形:"+area();
+	 }
+	 
+}
+class Trg extends Shape {
+	 double width, height;
+	 public Trg(double h, double w) {
+		 this.height = h;
+		 this.width = w;
+	}
+	public double area() {
+		 return height*width*3.14;
+	}
+	String put(){
+		 return "三角形:"+area();
+	 }
+}
+
