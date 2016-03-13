@@ -1,0 +1,48 @@
+import java.util.Scanner;
+class Candle{
+	int year;
+	int month;
+	int day;
+	Candle(int a,int b,int c){
+		this.year=a;
+		this.month=b;
+		this.day=c;
+	}
+	int out1()	{
+		return year;
+	}
+	int out2()	{
+		return month;
+	}
+	int out3()	{
+		return day;
+	}
+}
+public class C2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Candle A;
+		Scanner s = new Scanner(System.in);
+		int a,b,c;
+		do{
+			System.out.print("輸入年:");
+			a = s.nextInt();
+			if(a<0)
+				continue;
+			System.out.print("月:");
+			b = s.nextInt();
+			if(b>12 || b<1)
+				continue;			
+			System.out.print("日:");
+			c = s.nextInt();
+			if(c>31 || c<1)
+				continue;
+			break;
+		}while(true);
+		A = new Candle(a,b,c);
+		
+		System.out.print("印出:"+A.out1()+"/"+A.out2()+"/"+A.out3());
+	}
+
+}
