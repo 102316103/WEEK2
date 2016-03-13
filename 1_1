@@ -1,0 +1,14 @@
+
+public class TIME {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a,b,sum;
+		a = 45 + 60 * (23 + 60 * 4);
+		b = 23 + 60 * (54 + 60 * 13);
+		sum = b-a;
+ 		System.out.print("4點23分45秒到13點54分23秒->"+sum+"s");
+		
+	}
+
+}
