@@ -1,0 +1,27 @@
+import java.io.*;
+public class B1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		InputStreamReader is = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(is);
+		try{
+			System.out.print("請輸入姓名：");
+			String name = in.readLine();
+			System.out.print("請輸入西元年：");
+			String year = in.readLine();
+			System.out.print("請輸入月份：");
+			String month = in.readLine();
+			System.out.print("請輸入日：");
+			String data = in.readLine();			
+			
+			System.out.println(name+"您好，\n生日:"+year+"/"+month+"/"+data);
+		}
+		catch (Exception e) {
+			System.out.println("Error:"+e);
+		}
+		
+	}
+
+}
