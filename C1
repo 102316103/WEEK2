@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class D1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i,opt,count=0;
+		double a,b;
+		Scanner op = new Scanner(System.in);
+		Oval c[]= new Oval[10];
+		do{
+			System.out.print("(1)輸入(2)印出:");
+			opt=op.nextInt();
+			if(opt==1){
+				System.out.print("橢圓("+(count+1)+")短軸:");
+				a = op.nextDouble();
+				System.out.print("橢圓("+(count+1)+")長軸:");
+				b = op.nextDouble();
+				c[count]=new Oval(a,b);
+				count++;
+			}else if(opt==2){
+				System.out.print("編號:");
+				i = op.nextInt();
+				System.out.println("橢圓"+i+"面積："+c[i-1].area());
+			}
+			
+	
+		}while(opt!=-1);
+	}
+
+}
+
+class circle{
+	double r = 0;
+	circle(double r){
+		this.r=r;
+	}
+	double Arc(double a){
+		return 3.14*r*r*(a/360);
+	}
+	double Pie(double a){
+		return 3.14*2*r*(a/360);
+	}
+
+}
+class Oval extends circle {
+	double maxr;
+	public Oval(double i, double a) {
+		 super(i);
+		 this.maxr = a;
+	}
+	public double area() {
+		 return maxr*r*3.14;
+	}
+
+	 
+}
